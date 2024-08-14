@@ -1,0 +1,70 @@
+gRPC Mocking & Go Template Engine
+
+
+14 August 2024
+
+Bahaa Noah
+Backend Chapter
+
+
+*
+.image gopher_puzzle.png
+
+* Problem we're trying to solve
+- Limitation on mocking gRPC integrations for Chaos and stress testing.
+- Libraries like gripmock doesn't support the use cases we have.
+
+* Demo
+
+
+* Go Templates 101
+
+Go's `text/template` and `html/template` packages provide:
+
+- Powerful templating capabilities
+- Safe HTML escaping
+- Flexible data interpolation
+- Control structures for dynamic content
+
+* Introduction to Go Templates (Example)
+
+.play template_intro.go /^//START/,/^//END/ HL23
+
+* Basic Syntax
+
+- Delimiters: `{{` and `}}`
+- Variables: `{{.FieldName}}`
+- Methods: `{{.Method}}`
+- Nested fields: `{{.User.Name}}`
+
+* Basic Syntax (Example)
+
+.play basic_syntax.go /^//START/,/^//END/ HL23
+
+* Actions and Control Structures
+
+- Conditionals: `{{if}}`, `{{else}}`, `{{end}}`
+- Loops: `{{range}}`, `{{end}}`
+- With: `{{with}}`, `{{end}}`
+
+* Actions and Control Structures (Example 1)
+
+.code actions.go /^//START/,/^//END/ HL23
+
+* Actions and Control Structures (Example 2)
+
+.play actions.go /START2 OMIT/,/END2 OMIT/ HL23
+
+
+* Resources
+- Feature PR: https://github.com/HungerStation/hs-moquerie/pull/22
+- Infra-test example: https://github.com/HungerStation/infra-releases/pull/17763/files
+- Endpoint example: https://github.com/HungerStation/infra-releases/blob/dd3f9ddcc2fe5fadb8e8d46263391b3ce6157421/offer/infra-test-1.yaml#L163
+- Go Template docs: https://pkg.go.dev/text/template
+- Go Present: https://pkg.go.dev/golang.org/x/tools/present
+
+* Q&A
+
+Thank you!
+
+Questions?
